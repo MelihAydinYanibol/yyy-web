@@ -37,7 +37,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={`${inter.variable} antialiased`}>
-      <body>{children}</body>
+      {/* Browser extensions often inject attributes into <body> before React loads. */}
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

@@ -30,17 +30,19 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative isolate flex min-h-[92svh] items-end overflow-hidden pt-16">
+        {/* Hero height leaves room for the stats bar on the first screen; the photo just fills it. */}
+        <section className="relative isolate flex h-[calc(100svh-9rem)] min-h-[30rem] max-h-[44rem] items-center overflow-hidden pt-16">
           <img
             src={photo(4, 1600)}
             srcSet={srcSet(4)}
             sizes="100vw"
             alt=""
             fetchPriority="high"
-            className="absolute inset-0 -z-10 h-full w-full object-cover"
+            className="absolute inset-0 -z-10 h-full w-full object-cover object-[center_35%]"
           />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/75 to-ink/30" />
-          <div className="mx-auto w-full max-w-6xl px-4 pb-16 sm:pb-24">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/30" />
+          <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-ink to-transparent" />
+          <div className="mx-auto w-full max-w-6xl px-4 py-10">
             <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur">
               <img src="/img/logos/iesu.webp" alt="" width={16} height={20} className="h-5 w-auto" />
               {club.university}
@@ -71,7 +73,7 @@ export default function Home() {
 
         {/* Stats */}
         <section aria-label="Rakamlarla kulüp" className="border-y border-white/10 bg-panel">
-          <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-y-6 px-4 py-8 sm:grid-cols-4">
+          <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-y-6 px-4 py-6 sm:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
                 <dt className="sr-only">{s.label}</dt>
