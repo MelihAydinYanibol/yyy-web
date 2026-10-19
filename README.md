@@ -51,3 +51,4 @@ magick face.png  -resize 320x320^ -gravity center -extent 320x320 -quality 78 pu
 3. Add your domain under **Custom domains**.
  
 Both are free with HTTPS included.
+-- this is a demo website
