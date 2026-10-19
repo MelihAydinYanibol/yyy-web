@@ -49,5 +49,5 @@ magick face.png  -resize 320x320^ -gravity center -extent 320x320 -quality 78 pu
 1. In the Cloudflare dashboard, go to **Workers & Pages → Create → Pages → Connect to Git** and pick this repo.
 2. Build command: `npm run build`. Output directory: `out`.
 3. Add your domain under **Custom domains**.
-
+ 
 Both are free with HTTPS included.
