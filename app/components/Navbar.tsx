@@ -1,23 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import { club } from "@/content/site";
+import { club, ui, type Locale } from "@/content/site";
 
-const links = [
-  { href: "#hakkimizda", label: "Hakkımızda" },
-  { href: "#etkinlikler", label: "Etkinlikler" },
-  { href: "#galeri", label: "Galeri" },
-  { href: "#ekip", label: "Ekip" },
-  { href: "#iletisim", label: "İletişim" },
-];
-
-export default function Navbar() {
+export default function Navbar({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
+  const t = ui[locale];
+  const home = locale === "en" ? "/en" : "/";
+  const otherLocaleHref = locale === "en" ? "/" : "/en";
+  const links = [
+    { href: "#about", label: t.nav.about },
+    { href: "#events", label: t.nav.events },
+    { href: "#gallery", label: t.nav.gallery },
+    { href: "#team", label: t.nav.team },
+    { href: "#contact", label: t.nav.contact },
+  ];
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <a href="#" className="flex items-center gap-2 font-bold" onClick={() => setOpen(false)}>
+        <a href={home} className="flex items-center gap-2 font-bold" onClick={() => setOpen(false)}>
           <img src="/img/logos/yyy.webp" alt="" width={36} height={36} className="h-9 w-9" />
           <span>{club.shortName}</span>
         </a>
@@ -32,27 +34,47 @@ export default function Navbar() {
           ))}
           <li>
             <a
+              href={otherLocaleHref}
+              hrefLang={locale === "en" ? "tr" : "en"}
+              aria-label={t.switchLabel}
+              className="rounded-md border border-white/20 px-2 py-1 text-xs font-semibold transition hover:bg-white/10 hover:text-white"
+            >
+              {t.switchShort}
+            </a>
+          </li>
+          <li>
+            <a
               href={club.joinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-white px-4 py-2 font-semibold text-ink transition hover:bg-white/85"
             >
-              Kulübe Katıl
+              {t.join}
             </a>
           </li>
         </ul>
 
-        <button
-          type="button"
-          className="-mr-2 p-2 md:hidden"
-          aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
-          </svg>
-        </button>
+        <div className="flex items-center gap-1 md:hidden">
+          <a
+            href={otherLocaleHref}
+            hrefLang={locale === "en" ? "tr" : "en"}
+            aria-label={t.switchLabel}
+            className="rounded-md border border-white/20 px-2 py-1 text-xs font-semibold"
+          >
+            {t.switchShort}
+          </a>
+          <button
+            type="button"
+            className="-mr-2 p-2"
+            aria-label={open ? t.menuClose : t.menuOpen}
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+            </svg>
+          </button>
+        </div>
       </nav>
 
       {open && (
@@ -71,7 +93,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="block rounded-full bg-white px-4 py-2 text-center font-semibold text-ink"
             >
-              Kulübe Katıl
+              {t.join}
             </a>
           </li>
         </ul>

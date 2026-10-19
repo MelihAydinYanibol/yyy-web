@@ -17,6 +17,8 @@ npm run build   # writes the static site to out/
 
 Text, events, team members and gallery photos are all in **`content/site.ts`**. You usually don't need to touch any component.
 
+The site comes in two languages: Turkish at `/` and English at `/en`, with a TR/EN switch in the navbar. Every visible text is written as `{ tr: "...", en: "..." }`, and buttons and headings live in the `ui` object, so add both languages whenever you change something.
+
 - **New event:** add it to `upcomingEvents`. After it happens, move it to the top of `pastEvents`.
 - **Join form:** set `club.joinUrl` to your Google Forms / Tally link. It currently points to Instagram.
 - **Domain:** set `club.siteUrl` to your real domain so link previews (Open Graph) work.
