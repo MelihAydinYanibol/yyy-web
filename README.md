@@ -22,6 +22,7 @@ The site comes in two languages: Turkish at `/` and English at `/en`, with a TR/
 - **New event:** add it to `upcomingEvents`. After it happens, move it to the top of `pastEvents`.
 - **Join form:** set `club.joinUrl` to your Google Forms / Tally link. It currently points to Instagram.
 - **Domain:** set `club.siteUrl` to your real domain so link previews (Open Graph) work.
+- **Git Good event links:** `/katilim` forwards to the event site's attendance page (`club.eventSiteUrl`), keeping the personal code after `#`. It exists because some attendance emails linked to this domain. Change `club.eventSiteUrl` if the event site moves.
 
 ### Adding photos
 
