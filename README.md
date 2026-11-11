@@ -41,7 +41,7 @@ magick face.png  -resize 320x320^ -gravity center -extent 320x320 -quality 78 pu
 ## Deploying for free
 
 ### Vercel (easiest)
-1. Go to [vercel.com/new](https://vercel.com/new) and import this GitHub repo. It detects Next.js, so leave the defaults.
+1. Go to [vercel.com/new](https://vercel.com/new) and import this GitHub repo. `vercel.json` pins the Next.js framework preset, so leave the defaults (don't set an output directory). On Vercel the app is built natively instead of exported to `out/`.
 2. Every push to `main` deploys automatically, and pull requests get preview links.
 3. To use your domain: open the project, go to **Settings → Domains**, add your domain, then add the DNS records Vercel shows at your domain registrar.
 
