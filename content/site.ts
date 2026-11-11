@@ -153,7 +153,7 @@ export const upcomingEvents: {
       tr: "Ücretsiz atölye: sıfırdan Git ve GitHub öğren, ilk commit'ini at, projeni GitHub'a pushla ve GitHub Pages ile yayına al. Kulüp üyesi olman gerekmiyor; kontenjan 40 kişi, yerler kayıt sırasına göre.",
       en: "Free workshop: learn Git and GitHub from scratch, make your first commit, push your project to GitHub and put it live with GitHub Pages. No club membership needed; 40 seats, given in order of registration.",
     },
-    url: "https://yyy-demo-event.vercel.app/#register",
+    url: "https://event.3yyazilim.com/#register",
   },
 ];
 
