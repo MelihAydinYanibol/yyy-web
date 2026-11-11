@@ -237,7 +237,7 @@ export default function Site({ locale }: { locale: Locale }) {
                   )}
                   <h3 className="mt-4 font-bold">{m.name}</h3>
                   <p className="mt-1 text-sm text-pink-400">{m.role[locale]}</p>
-                  <p className="mt-0.5 text-xs text-white/50">{m.department[locale]}</p>
+                  {m.department && <p className="mt-0.5 text-xs text-white/50">{m.department[locale]}</p>}
                   {(m.linkedin || m.github) && (
                     <div className="mt-3 flex justify-center gap-2">
                       {m.linkedin && (

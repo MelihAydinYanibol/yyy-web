@@ -198,11 +198,10 @@ export const pastEvents: { date: Text; title: Text; description: Text; participa
 const role = {
   president: { tr: "Kulüp Başkanı", en: "President" },
   vicePresident: { tr: "Başkan Yardımcısı", en: "Vice President" },
-  events: { tr: "Etkinlik Koordinatörü", en: "Events Coordinator" },
+  software: { tr: "Yazılım Ekibi", en: "Software Team" },
+  secretary: { tr: "Sekreter", en: "Secretary" },
   treasurer: { tr: "Sayman", en: "Treasurer" },
-  software: { tr: "Yazılım Koordinatörü", en: "Software Coordinator" },
-  ai: { tr: "Yapay Zeka Koordinatörü", en: "AI Coordinator" },
-  social: { tr: "Sosyal Medya ve Tasarım Koordinatörü", en: "Social Media & Design Coordinator" },
+  social: { tr: "Sosyal Medya ve Etkinlik", en: "Social Media & Events" },
 };
 const dept = {
   computer: { tr: "Bilgisayar Mühendisliği", en: "Computer Engineering" },
@@ -212,22 +211,22 @@ const dept = {
 export const team: {
   name: string;
   role: Text;
-  department: Text;
+  department?: Text;
   photo?: string;
   linkedin?: string;
   github?: string;
 }[] = [
-  { name: "Merve Bayezit", role: role.president, department: dept.computer, photo: "/img/team/merve.webp", linkedin: "https://www.linkedin.com/in/merve-bayezit/" },
-  { name: "Sümeyye Yeğen", role: role.vicePresident, department: dept.computer, photo: "/img/team/sumeyye.webp", linkedin: "https://www.linkedin.com/in/s%C3%BCmeyye-ye%C4%9Fen" },
-  { name: "Muhammed Ege Atılgan", role: role.events, department: dept.computer, photo: "/img/team/ege.webp", linkedin: "https://www.linkedin.com/in/ege-at%C4%B1lgan-808840314/", github: "https://github.com/egeatilgan5757" },
-  { name: "Seba Defa", role: role.events, department: dept.computer, photo: "/img/team/seba.webp", linkedin: "https://www.linkedin.com/in/sabadefa/" },
-  { name: "Emirhan Ertaş", role: role.treasurer, department: dept.computer, photo: "/img/team/emirhan.webp", linkedin: "https://linkedin.com/in/emirertas" },
-  { name: "Aydın Melih Yanıbol", role: role.software, department: dept.computer, photo: "/img/team/melih.webp", github: "https://github.com/MelihAydinYanibol/" },
-  { name: "SeyyedBenyamin Valaei", role: role.ai, department: dept.computer, photo: "/img/team/benyamin.webp", linkedin: "https://www.linkedin.com/in/seyyedbenyaminvalaei/", github: "https://github.com/seyyedbenyaminvalaei" },
-  { name: "Umut Yıldız", role: role.software, department: dept.computer, photo: "/img/team/umut.webp", linkedin: "https://www.linkedin.com/in/umut-y%C4%B1ld%C4%B1z-670b79378" },
-  { name: "İrem Kaya", role: role.social, department: dept.software, photo: "/img/team/irem.webp", linkedin: "https://www.linkedin.com/in/irem-kaya-13324a394" },
-  { name: "Başak Atlı", role: role.social, department: dept.software },
-  { name: "Mehmet Karabulut", role: role.social, department: dept.computer, photo: "/img/team/mehmet.webp", linkedin: "https://www.linkedin.com/in/mehmet-karabulut-26543633b" },
+  { name: "Sümeyye Yeğen", role: role.president, department: dept.computer, photo: "/img/team/sumeyye.webp", linkedin: "https://www.linkedin.com/in/s%C3%BCmeyye-ye%C4%9Fen" },
+  { name: "İrem Kaya", role: role.vicePresident, department: dept.software, photo: "/img/team/irem.webp", linkedin: "https://www.linkedin.com/in/irem-kaya-13324a394" },
+  { name: "Aydın Melih Yanıbol", role: role.software, department: dept.computer, photo: "/img/team/melih.webp", linkedin: "https://www.linkedin.com/in/melih-ayd%C4%B1n-yan%C4%B1bol-47a101438/", github: "https://github.com/MelihAydinYanibol/" },
+  { name: "Umut Şimşek", role: role.software, department: dept.software, photo: "/img/team/umutsimsek.webp", linkedin: "https://www.linkedin.com/in/umutsimsek28/", github: "https://github.com/UmutSimsek22" },
+  { name: "Umut Yıldız", role: role.software, department: dept.computer, photo: "/img/team/umutyildiz.webp", linkedin: "https://www.linkedin.com/in/umut-y%C4%B1ld%C4%B1z-670b79378" },
+  { name: "Sümeyye Kaya", role: role.secretary, department: dept.computer, photo: "/img/team/sumeyyekaya.webp", linkedin: "https://www.linkedin.com/in/s%C3%BCmeyye-kaya-849663328/" },
+  { name: "Muhammed Emir Hayır", role: role.treasurer, photo: "/img/team/muhammedemir.webp" },
+  { name: "Mehmet Karabulut", role: role.social, department: dept.computer, photo: "/img/team/karabulut.webp", linkedin: "https://www.linkedin.com/in/mehmet-karabulut-26543633b" },
+  { name: "Başak Atlı", role: role.social, department: dept.software, photo: "/img/team/basak.webp" },
+  { name: "Elif Selay Yener", role: role.social, department: dept.computer, photo: "/img/team/elif.webp" },
+  { name: "İmran Özev", role: role.social, department: dept.computer, photo: "/img/team/imran.webp" },
 ];
 
 // Files in public/img/gallery as photoN-800.webp and photoN-1600.webp.
