@@ -26,6 +26,7 @@ function SectionHeading({ eyebrow, title, text }: { eyebrow: string; title: stri
 
 export default function Site({ locale }: { locale: Locale }) {
   const t = ui[locale];
+  const nextEvent = upcomingEvents[0];
 
   return (
     <>
@@ -53,6 +54,21 @@ export default function Site({ locale }: { locale: Locale }) {
               {t.heroTitleRest}
             </h1>
             <p className="mt-5 max-w-xl text-lg text-white/75">{club.tagline[locale]}</p>
+            {nextEvent?.url && (
+              <a
+                href={nextEvent.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mt-6 inline-flex max-w-full items-center gap-2 rounded-full border border-pink-400/40 bg-pink-400/10 py-1.5 pr-4 pl-1.5 text-sm text-white/90 backdrop-blur transition hover:bg-pink-400/20"
+              >
+                <span className="shrink-0 rounded-full bg-pink-400 px-2.5 py-0.5 text-xs font-bold text-ink">{t.nextEvent}</span>
+                <span className="truncate">
+                  {nextEvent.title[locale]} · {nextEvent.date[locale]}
+                </span>
+                <span className="shrink-0 font-semibold text-pink-300">{t.register}</span>
+                <ArrowIcon className="h-4 w-4 shrink-0 text-pink-300 transition-transform group-hover:translate-x-0.5" />
+              </a>
+            )}
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={club.joinUrl}
@@ -136,9 +152,9 @@ export default function Site({ locale }: { locale: Locale }) {
                         href={e.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-pink-400 hover:text-pink-300"
+                        className="group mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-white/85"
                       >
-                        {t.register} <ArrowIcon className="h-4 w-4" />
+                        {t.register} <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                       </a>
                     )}
                   </article>
