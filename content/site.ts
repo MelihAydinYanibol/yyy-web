@@ -50,6 +50,7 @@ export const ui = {
     upcoming: "Yaklaşan etkinlikler",
     noUpcoming: "Yeni etkinlikler çok yakında! Duyurular için bizi Instagram'da takip edin.",
     register: "Kayıt ol",
+    nextEvent: "Yaklaşan",
     past: "Geçmiş etkinlikler",
     participants: "katılımcı",
     galleryEyebrow: "Galeri",
@@ -82,6 +83,7 @@ export const ui = {
     upcoming: "Upcoming events",
     noUpcoming: "New events are coming soon! Follow us on Instagram for announcements.",
     register: "Register",
+    nextEvent: "Upcoming",
     past: "Past events",
     participants: "participants",
     galleryEyebrow: "Gallery",
@@ -138,8 +140,22 @@ export const upcomingEvents: {
   date: Text; // e.g. { tr: "12 Kasım 2026, 14:00", en: "12 November 2026, 2 PM" }
   location: Text;
   description: Text;
-  url?: string;
-}[] = [];
+  url?: string; // registration link, shown as a "Kayıt ol" button
+}[] = [
+  {
+    title: { tr: "Git Good: Git ve GitHub Atölyesi", en: "Git Good: Git & GitHub Workshop" },
+    date: { tr: "17 Kasım 2026, Salı · 10:00–12:00", en: "Tuesday, 17 November 2026 · 10:00–12:00" },
+    location: {
+      tr: "Mühendislik Fakültesi, Bilgisayar Laboratuvarı",
+      en: "Faculty of Engineering, Computer Lab",
+    },
+    description: {
+      tr: "Ücretsiz atölye: sıfırdan Git ve GitHub öğren, ilk commit'ini at, projeni GitHub'a pushla ve GitHub Pages ile yayına al. Kulüp üyesi olman gerekmiyor; kontenjan 40 kişi, yerler kayıt sırasına göre.",
+      en: "Free workshop: learn Git and GitHub from scratch, make your first commit, push your project to GitHub and put it live with GitHub Pages. No club membership needed; 40 seats, given in order of registration.",
+    },
+    url: "https://yyy-demo-event.vercel.app/#register",
+  },
+];
 
 // Newest first.
 export const pastEvents: { date: Text; title: Text; description: Text; participants: string; tags: Text[] }[] = [
