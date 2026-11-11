@@ -27,6 +27,9 @@ export const club = {
   // TODO: replace with your membership form (Google Forms, Tally, etc.).
   joinUrl: "https://instagram.com/iesuyyyazilim",
   siteUrl: "https://example.com", // TODO: set to your real domain
+  // The Git Good event site (the yyy-demo-event project). /katilim on this site forwards there, because
+  // some attendance emails were sent with links to this domain. Change it if the event site moves.
+  eventSiteUrl: "https://yyy-demo-event.vercel.app",
 };
 
 // Interface text (buttons, headings, labels).
